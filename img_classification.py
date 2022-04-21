@@ -3,7 +3,6 @@
 
 # In[4]:
 
-
 import keras
 from PIL import Image, ImageOps
 import numpy as np
@@ -16,8 +15,8 @@ def make_predictions(img, model_file):
     
     # create the array of the shape for the keras model
     image = img
-    data = np.ndarray(shape=(1,299,299,3), dtype=np.float32)
-    size = (299,299)
+    data = np.ndarray(shape=(1,224,224,3), dtype=np.float32)
+    size = (224,224)
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
     
     # change image to numpy array

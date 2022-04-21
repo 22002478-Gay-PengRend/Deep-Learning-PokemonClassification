@@ -2,4 +2,4 @@ streamlit
 pandas
 numpy
 sklearn
-tensorflow-cpu==1.14
+tensorflow

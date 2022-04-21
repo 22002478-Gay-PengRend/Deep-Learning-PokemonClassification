@@ -9,7 +9,7 @@ from img_classification import make_predictions
 from PIL import Image
 import numpy as np
 
-st.title("Image Classification with Deep Learning Model")
+st.title("Classification with Deep Learning Model (MobileNetV2)")
 st.header("Pokemon classification Example")
 st.text("Upload a photo of either bulbasaur, charmander, charizard, mewtwo, or pikachu only")
 st.text("This example is only for the 5 above-mentioned pokemons")
@@ -30,10 +30,10 @@ if uploaded_file is not None:
     st.text("Classifying ... ... ...")
     
     # this gets the probability of the maximum score
-    max_p = np.sort(np.max(make_predictions(image, 'pokemon_classifier_model.h5'),axis=0))[-1]
+    max_p = np.sort(np.max(make_predictions(image, 'pokemon_classifier_mobilenetModel.h5'),axis=0))[-1]
 
     # this gets the probability of the 2nd maximum score
-    max_2p = np.sort(np.max(make_predictions(image, 'pokemon_classifier_model.h5'),axis=0))[-2]
+    max_2p = np.sort(np.max(make_predictions(image, 'pokemon_classifier_mobilenetModel.h5'),axis=0))[-2]
 
     # this gets the ratio of the confidence level of the best probability to the best+2nd best combined    
     value = max_p/(max_p+max_2p)
@@ -42,7 +42,7 @@ if uploaded_file is not None:
     #code1 = print('The prediction is: ',labels[np.argmax(make_predictions(image, 'pokemon_classifier_model.h5'),axis=1).tolist()[0]])
     st.text('The prediction is: ...')
     
-    variable_output = labels[np.argmax(make_predictions(image, 'pokemon_classifier_model.h5'))]
+    variable_output = labels[np.argmax(make_predictions(image, 'pokemon_classifier_mobilenetModel.h5'))]
     font_size = 50
     html_str = f"""
     <style>
@@ -64,7 +64,7 @@ if uploaded_file is not None:
     
     st.text('------------------------------------------')
     value_match = {}
-    for k, num in zip(labels_k, make_predictions(image, 'pokemon_classifier_model.h5')[0]):
+    for k, num in zip(labels_k, make_predictions(image, 'pokemon_classifier_mobilenetModel.h5')[0]):
         value_match[k] = num
 
     for k,v in value_match.items():
