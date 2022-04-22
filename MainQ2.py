@@ -15,7 +15,7 @@ st.text("Upload a photo of either bulbasaur, charmander, charizard, mewtwo, or p
 st.text("This example is only for the 5 above-mentioned pokemons")
 st.text("Any other pokemons uploaded might produce weird results, but you could try anyway")
 
-uploaded_file = st.file_uploader("Choose a pokemon ...", type="jpg")
+uploaded_file = st.file_uploader("Choose a pokemon ...")
 
 labels_k = {'bulbasaur': 0, 'charmander': 1, 'mewtwo': 2, 'pikachu': 3, 'squirtle': 4}
 labels = {0: 'bulbasaur', 1: 'charmander', 2: 'mewtwo', 3: 'pikachu', 4: 'squirtle'}
