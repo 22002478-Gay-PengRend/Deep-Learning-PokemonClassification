@@ -14,6 +14,7 @@ st.header("Pokemon classification Example")
 st.text("Upload a photo of either bulbasaur, charmander, charizard, mewtwo, or pikachu only")
 st.text("This example is only for the 5 above-mentioned pokemons")
 st.text("Any other pokemons uploaded might produce weird results, but you could try anyway")
+st.text("jpg format works best, others might encounter errors")
 
 uploaded_file = st.file_uploader("Choose a pokemon ...")
 
