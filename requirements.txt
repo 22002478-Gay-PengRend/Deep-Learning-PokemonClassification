@@ -3,3 +3,4 @@ pandas
 numpy
 sklearn
 tensorflow
+protobuf~=3.19.0
